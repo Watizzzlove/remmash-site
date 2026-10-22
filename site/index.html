@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>РЕММАШСЕРВИС — Противопожарные двери и преграды | ГОСТ Р 57327-2016</title>
+  <meta name="description" content="Производство сертифицированных противопожарных дверей ДМП-01, ДМП-02, люков ЛМП и остекленных конструкций EIW-60 по ГОСТ Р 57327-2016. Завод в Кирове.">
+  
+  <!-- Fonts: Space Grotesk (Brutalist display), Inter (Editorial body), JetBrains Mono (Technical specs) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- STICKY TOPBAR (TRANSPARENT IN HERO, DARK BLUR ON SCROLL) -->
+  <header id="topbar" class="topbar">
+    <div class="topbar_content">
+      <div class="topbar_col brand_col">
+        <a href="#hero" class="brand_link">
+          <span class="detail_txt gray">РЕММАШСЕРВИС</span>
+          <span class="detail_txt white subbrand">ЗАВОД ПРОТИВОПОЖАРНЫХ КОНСТРУКЦИЙ</span>
+        </a>
+      </div>
+
+      <!-- DESKTOP SECTION LINKS (CLEAN NAVIGATION) -->
+      <nav class="topbar_col nav_col">
+        <a href="#lineup" class="detail_txt white nav_link">КАТАЛОГ</a>
+        <a href="#key_features" class="detail_txt white nav_link">КОНСТРУКЦИЯ</a>
+        <a href="#exploded" class="detail_txt white nav_link">АНАТОМИЯ</a>
+        <a href="#specs" class="detail_txt white nav_link">СПЕЦИФИКАЦИЯ</a>
+        <a href="#delivery" class="detail_txt white nav_link">ДОСТАВКА/МОНТАЖ</a>
+        <a href="#gallery" class="detail_txt white nav_link">ГАЛЕРЕЯ</a>
+        <a href="#order" class="detail_txt white nav_link">КОНТАКТЫ</a>
+      </nav>
+
+      <div class="topbar_col cta_col">
+        <a href="tel:+78332205611" class="detail_txt white phone_link">+7 (8332) 20-56-11</a>
+        <button id="header_calc_btn" class="btn_outline detail_txt hidden_mobile_btn" onclick="openOrderModal('Общий расчёт спецификации')">РАСЧЁТ ↗</button>
+        
+        <!-- MOBILE BURGER BUTTON -->
+        <button id="burger_btn" class="burger_btn" onclick="toggleMobileMenu()" aria-label="Меню">
+          <span class="burger_bar"></span>
+          <span class="burger_bar"></span>
+          <span class="burger_bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE FULLSCREEN MENU OVERLAY -->
+  <div id="mobile_menu" class="mobile_menu hidden">
+    <div class="mobile_menu_inner">
+      <div class="mobile_menu_header">
+        <span class="detail_txt orange">РЕММАШСЕРВИС · МЕНЮ</span>
+        <button class="mobile_close_btn" onclick="toggleMobileMenu()" aria-label="Закрыть">✕</button>
+      </div>
+
+      <nav class="mobile_nav_list">
+        <a href="#lineup" class="disp_txt_sm white mobile_link" onclick="toggleMobileMenu()">КАТАЛОГ</a>
+        <a href="#key_features" class="disp_txt_sm white mobile_link" onclick="toggleMobileMenu()">КОНСТРУКЦИЯ</a>
+        <a href="#exploded" class="disp_txt_sm white mobile_link" onclick="toggleMobileMenu()">АНАТОМИЯ</a>
+        <a href="#specs" class="disp_txt_sm white mobile_link" onclick="toggleMobileMenu()">СПЕЦИФИКАЦИЯ</a>
+        <a href="#delivery" class="disp_txt_sm white mobile_link" onclick="toggleMobileMenu()">ДОСТАВКА И МОНТАЖ</a>
+        <a href="#gallery" class="disp_txt_sm white mobile_link" onclick="toggleMobileMenu()">ГАЛЕРЕЯ ОБЪЕКТОВ</a>
+        <a href="#order" class="disp_txt_sm white mobile_link" onclick="toggleMobileMenu()">КОНТАКТЫ</a>
+      </nav>
+
+      <div class="mobile_menu_footer detail_txt">
+        <a href="tel:+78332205611" class="white phone_link" style="font-size: 16px;">+7 (8332) 20-56-11</a>
+        <div class="gray" style="margin: 0.5rem 0 1.25rem 0;">Г. КИРОВ, УЛ. ПРОИЗВОДСТВЕННАЯ, 28</div>
+        <button class="btn_brutalist full_width" onclick="toggleMobileMenu(); openOrderModal('Заявка из мобильного меню')">
+          <span>ЗАКАЗАТЬ РАСЧЁТ ↗</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION WITH MAX CONTRAST -->
+  <section id="hero" class="hero_section">
+    <div class="hero_video_bg">
+      <video id="hero_video" autoplay loop muted playsinline poster="assets/video/hero_video.webp">
+        <source src="assets/video/hero_main_video.mp4" type="video/mp4">
+      </video>
+      <div class="hero_overlay"></div>
+    </div>
+
+    <div class="hero_content">
+      <div class="hero_title_box">
+        <h1 class="disp_txt white hero_title">
+          ТВОЙ БИЗНЕС<br>
+          <span class="hero_accent">НЕ ГОРИТ</span>
+        </h1>
+        <p class="hero_subheadline detail_txt">
+          ПРЕДЕЛ ОГНЕСТОЙКОСТИ ДО 90 МИНУТ &nbsp;|&nbsp; ГОСТ Р 57327-2016 &nbsp;|&nbsp; ТР ЕАЭС 043/2017
+        </p>
+        <div class="hero_actions">
+          <button class="btn_brutalist" onclick="openOrderModal('Главный экран: Заказ расчета')">
+            <span>ЗАКАЗАТЬ РАСЧЁТ ПРОЕКТА</span>
+            <span class="arrow">↗</span>
+          </button>
+          <a href="#swipe_showcase" class="btn_ghost detail_txt white">
+            <span>К СПЕЦИФИКАЦИИ ↓</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- CLEAN UNCLUTTERED HERO BOTTOMBAR -->
+      <div class="hero_bottombar_minimal detail_txt">
+        <div class="hbm_col left">
+          <span class="white">РЕММАШСЕРВИС · КИРОВ</span>
+        </div>
+        <div class="hbm_col right">
+          <span class="white">ГОСТ Р 57327-2016 · ТР ЕАЭС 043/2017</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLEED PRODUCT SWIPE TRACK (FULL WIDTH, NO BORDER) -->
+  <section id="swipe_showcase" class="swipe_section">
+    <div class="swipe_title_wrap">
+      <h2 class="disp_txt_huge white">МОДЕЛЬНЫЙ РЯД В ДВИЖЕНИИ</h2>
+      <div class="swipe_sub detail_txt gray">СЕРТИФИЦИРОВАННЫЕ КОНСТРУКЦИИ РЕММАШСЕРВИС В ДЕЙСТВИИ</div>
+    </div>
+    
+    <div class="swipe_video_container_fullbleed">
+      <video id="swipe_video" autoplay loop muted playsinline poster="assets/video/swipe_doors.webp">
+        <source src="assets/video/swipe_doors_1.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <!-- EDITORIAL BLURB -->
+  <section id="blurb" class="blurb_section">
+    <div class="blurb_grid">
+      <div class="blurb_col_left detail_txt gray">
+        ОГНЕЗАЩИТНЫЕ РЕШЕНИЯ<br>
+        ПРЯМОЙ ЗАВОД-ИЗГОТОВИТЕЛЬ
+      </div>
+      <div class="blurb_col_main">
+        <div class="body_txt dark_gray blurb_lead">
+          Возможно ли объединить максимальный предел огнестойкости EI-60, абсолютную герметичность дымогазонепроницаемости EIS и промышленную архитектурную эстетику?
+        </div>
+        <div class="body_txt dark_gray blurb_subtext">
+          Завод «РемМашСервис» проектирует и изготавливает противопожарные металлические двери, люки, ворота и остекленные алюминиевые фасады по ГОСТ Р 57327-2016 и регламенту ТР ЕАЭС 043/2017.
+          <br><br>
+          Каждое изделие выпускается на роботизированных гибочных линиях ЧПУ, заполняется гидрофобизированной базальтовой плитой плотностью 130 кг/м³ и сопровождается полным комплектом документов для органов МЧС и государственного строительного надзора.
+        </div>
+        <div class="blurb_action">
+          <button class="btn_outline_dark detail_txt" onclick="openOrderModal('Блок манифеста: Скачать каталог и сертификаты')">
+            СКАЧАТЬ СЕРТИФИКАТЫ И ТЕХДОСЬЕ ↗
+          </button>
+        </div>
+      </div>
+      <div class="blurb_col_right"></div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE PRODUCT LINEUP (CARDS WITH REAL PHOTOS) -->
+  <section id="lineup" class="lineup_section">
+    <div class="section_title_row">
+      <h2 class="disp_txt black">КАТАЛОГ</h2>
+      <div class="category_switcher detail_txt">
+        <button class="cat_btn active" data-category="all">ВСЕ КОНСТРУКЦИИ</button>
+        <button class="cat_btn" data-category="fire_doors">ДВЕРИ EI-60 / EIS</button>
+        <button class="cat_btn" data-category="hatches">ЛЮКИ ЛМП</button>
+        <button class="cat_btn" data-category="glass">ОКНА EIW-60</button>
+        <button class="cat_btn" data-category="gates">ВОРОТА ВМ</button>
+        <button class="cat_btn" data-category="tech">ТЕХНИЧЕСКИЕ</button>
+      </div>
+    </div>
+
+    <div class="products_grid" id="products_container">
+      <!-- 1. ДМП-01 -->
+      <article class="product_card" data-category="fire_doors" onclick="showProductModal('dmp01')">
+        <div class="card_header">
+          <span class="detail_txt gray">01 / ДВЕРИ МЕТАЛЛИЧЕСКИЕ</span>
+          <span class="card_tag detail_txt orange">EI-60 / EIS</span>
+        </div>
+        <div class="card_img_wrap">
+          <img src="assets/doors/dmp_01.jpg" alt="Противопожарная дверь ДМП-01 однопольная" loading="lazy">
+        </div>
+        <div class="card_footer">
+          <div class="card_title disp_txt_sm">ДМП-01 EIS-60</div>
+          <div class="card_specs detail_txt gray">
+            <span>ОДНОПОЛЬНАЯ ГЛУХАЯ</span>
+            <span>СТАЛЬ 1.5 ММ</span>
+            <span>БАЗАЛЬТ 130 КГ/М³</span>
+          </div>
+          <button class="btn_card_more detail_txt">ПАРАМЕТРЫ ↗</button>
+        </div>
+      </article>
+
+      <!-- 2. ДМП-02 -->
+      <article class="product_card" data-category="fire_doors" onclick="showProductModal('dmp02')">
+        <div class="card_header">
+          <span class="detail_txt gray">02 / ДВЕРИ МЕТАЛЛИЧЕСКИЕ</span>
+          <span class="card_tag detail_txt orange">EI-60 / EIS</span>
+        </div>
+        <div class="card_img_wrap">
+          <img src="assets/doors/dmp_02.png" alt="Противопожарная дверь ДМП-02 двупольная" loading="lazy">
+        </div>
+        <div class="card_footer">
+          <div class="card_title disp_txt_sm">ДМП-02 EIS-60</div>
+          <div class="card_specs detail_txt gray">
+            <span>ДВУПОЛЬНАЯ С АНТИПАНИКОЙ</span>
+            <span>СТАЛЬ 1.5–2.0 ММ</span>
+            <span>СИСТЕМА PUSH-BAR</span>
+          </div>
+          <button class="btn_card_more detail_txt">ПАРАМЕТРЫ ↗</button>
+        </div>
+      </article>
+
+      <!-- 3. ДМПД-01 ОСТЕКЛЕННАЯ -->
+      <article class="product_card" data-category="fire_doors" onclick="showProductModal('dmpd01_glass')">
+        <div class="card_header">
+          <span class="detail_txt gray">03 / ОСТЕКЛЕННЫЕ ДВЕРИ</span>
+          <span class="card_tag detail_txt orange">EIW-60</span>
+        </div>
+        <div class="card_img_wrap">
+          <img src="assets/doors/dmpd_01_glass.png" alt="Дверь остекленная ДМПД-01" loading="lazy">
+        </div>
+        <div class="card_footer">
+          <div class="card_title disp_txt_sm">ДМПД-01 О EIW-60</div>
+          <div class="card_specs detail_txt gray">
+            <span>ОДНОПОЛЬНАЯ СО СТЕКЛОМ ДО 25%</span>
+            <span>МНОГОСЛОЙНЫЙ СТЕКЛОПАКЕТ</span>
+            <span>ГЕЛЕВОЕ ЗАПОЛНЕНИЕ</span>
+          </div>
+          <button class="btn_card_more detail_txt">ПАРАМЕТРЫ ↗</button>
+        </div>
+      </article>
+
+      <!-- 4. ЛМП-01 -->
+      <article class="product_card" data-category="hatches" onclick="showProductModal('lmp01')">
+        <div class="card_header">
+          <span class="detail_txt gray">04 / ЛЮКИ ПРОТИВОПОЖАРНЫЕ</span>
+          <span class="card_tag detail_txt orange">EI-60</span>
+        </div>
+        <div class="card_img_wrap">
+          <img src="assets/doors/lmp_01.jpg" alt="Противопожарный люк ЛМП-01" loading="lazy">
+        </div>
+        <div class="card_footer">
+          <div class="card_title disp_txt_sm">ЛМП-01 EI-60</div>
+          <div class="card_specs detail_txt gray">
+            <span>ЛЮК НАСТЕННЫЙ / НАПОЛЬНЫЙ</span>
+            <span>УСИЛЕННЫЙ ПЕРИМЕТР</span>
+            <span>ДВУХКОНТУРНАЯ ТЕРМОЛЕНТА</span>
+          </div>
+          <button class="btn_card_more detail_txt">ПАРАМЕТРЫ ↗</button>
+        </div>
+      </article>
+
+      <!-- 5. ОКНА ПРОТИВОПОЖАРНЫЕ -->
+      <article class="product_card" data-category="glass" onclick="showProductModal('windows')">
+        <div class="card_header">
+          <span class="detail_txt gray">05 / АЛЮМИНИЕВЫЙ ПРОФИЛЬ</span>
+          <span class="card_tag detail_txt orange">EIW-60</span>
+        </div>
+        <div class="card_img_wrap">
+          <img src="assets/doors/windows_eiw.jpg" alt="Противопожарные алюминиевые окна" loading="lazy">
+        </div>
+        <div class="card_footer">
+          <div class="card_title disp_txt_sm">ОКНА EIW-60</div>
+          <div class="card_specs detail_txt gray">
+            <span>ТЕРМОИЗОЛИРОВАННЫЙ ПРОФИЛЬ</span>
+            <span>ОГНЕСТОЙКИЙ СТЕКЛОПАКЕТ</span>
+            <span>СЕРТИФИКАТ ТР ЕАЭС 043</span>
+          </div>
+          <button class="btn_card_more detail_txt">ПАРАМЕТРЫ ↗</button>
+        </div>
+      </article>
+
+      <!-- 6. ВОРОТА ВМ-02 -->
+      <article class="product_card" data-category="gates" onclick="showProductModal('gates')">
+        <div class="card_header">
+          <span class="detail_txt gray">06 / ПРОМЫШЛЕННЫЕ ВОРОТА</span>
+          <span class="card_tag detail_txt orange">EI-60</span>
+        </div>
+        <div class="card_img_wrap">
+          <img src="assets/doors/gates_vm02.png" alt="Противопожарные ворота ВМ-02" loading="lazy">
+        </div>
+        <div class="card_footer">
+          <div class="card_title disp_txt_sm">ВОРОТА ВМ-02</div>
+          <div class="card_specs detail_txt gray">
+            <span>РАСПАШНЫЕ С КАЛИТКОЙ И БЕЗ</span>
+            <span>СТАЛЬ ДО 2.0 ММ</span>
+            <span>ПРОЕМЫ ДО 4000×4000 ММ</span>
+          </div>
+          <button class="btn_card_more detail_txt">ПАРАМЕТРЫ ↗</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- KEY FEATURES (STRETCHED SCREEN, ENLARGED PUSHBAR, UNIFIED TEXT LINE) -->
+  <section id="key_features" class="kf_section">
+    <div class="kf_section_header">
+      <h2 class="disp_txt black headline">KEY FEATURES</h2>
+    </div>
+
+    <!-- FEATURE 01: ТЕРМОБАРЬЕР (FULL-WIDTH SHARP SPECIFICATION PRESENTATION) -->
+    <div class="key_feature key_feature_fullwidth">
+      <div class="kf_fullwidth_header">
+        <h3 class="kf_title disp_txt_sm dark_gray">ОГНЕСТОЙКИЙ БАЗАЛЬТОВЫЙ ТЕРМОБАРЬЕР 130 КГ/М³ И ТЕХНИЧЕСКАЯ СПЕЦИФИКАЦИЯ</h3>
+        <div class="body_txt dark_gray kf_text">
+          Основой теплоизоляционного пакета служит гидрофобизированная минераловатная плита плотностью 130 кг/м³ группы горючести НГ. Базальтовое волокно выдерживает температуру свыше 1000°C без потери структурной целостности. По периметру створки проложен двухконтурный уплотнитель: резиновый D-профиль для блокировки холодного дыма и терморасширяющаяся графитовая лента, вспенивающаяся при температуре свыше 150°C и герметизирующая все технологические зазоры.
+        </div>
+      </div>
+      <div class="kf_img_container kf_img_stretched">
+        <picture>
+          <source media="(max-width: 768px)" srcset="assets/details/slide_tech_mobile.png">
+          <img src="assets/details/slide_tech.png" alt="Техническая спецификация противопожарной двери" class="kf_img_fullwidth" loading="lazy">
+        </picture>
+      </div>
+    </div>
+
+    <!-- FEATURE 02: СТАЛЬНОЕ ПОЛОТНО (COMPACT PROPORTION) -->
+    <div class="key_feature">
+      <div class="kf_grid">
+        <div class="kf_col_media">
+          <div class="kf_img_container">
+            <img src="assets/doors/dmp_02.png" alt="Цельногнутое дверное полотно" class="kf_img_compact" loading="lazy">
+          </div>
+        </div>
+        <div class="kf_col_info">
+          <h3 class="kf_title disp_txt_sm dark_gray">ЦЕЛЬНОГНУТОЕ СТАЛЬНОЕ ПОЛОТНО С РЕБРАМИ ЖЕСТКОСТИ</h3>
+          <div class="body_txt dark_gray kf_text">
+            Полотно двери изготавливается из холоднокатаной легированной стали толщиной 1.5–2.0 мм методом высокоточной гибки на станках с ЧПУ. Внутри конструкции вварены вертикальные и диагональные П-образные ребра жесткости.
+            <br><br>
+            Усиленные петли на упорных закрытых подшипниках обеспечивают плавность хода створки массой до 120 кг и гарантируют эксплуатационный ресурс свыше 200 000 циклов открывания-закрывания.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURE 03: АНТИПАНИКА (ENLARGED CROPPED PUSHBAR, NO WHITE BG) -->
+    <div class="key_feature">
+      <div class="kf_grid">
+        <div class="kf_col_media">
+          <div class="kf_img_container kf_transparent_wrap">
+            <img src="assets/details/handle_antipanic.png" alt="Штанга аварийной эвакуации push bar" class="kf_img_pushbar_enlarged" loading="lazy">
+          </div>
+        </div>
+        <div class="kf_col_info">
+          <h3 class="kf_title disp_txt_sm dark_gray">СИСТЕМЫ ЭВАКУАЦИИ «АНТИПАНИКА» (PUSH-BAR) И СКУД</h3>
+          <div class="body_txt dark_gray kf_text">
+            Двери комплектуются сертифицированными ручками системы «Антипаника» нажимного и клавишного типа (Push-Bar) по ГОСТ 31471-2011, обеспечивающими моментальную эвакуацию при нажатии любой частью тела.
+            <br><br>
+            Противопожарный замок с термоблокировкой ригеля предотвращает заклинивание при температурной деформации. Возможно подключение электромагнитных держателей и интеграция в централизованную систему ОПС объекта.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURE 04: РУЧКИ ИЗ НЕРЖАВЕЮЩЕЙ СТАЛИ (TRANSPARENT NO WHITE BG) -->
+    <div class="key_feature">
+      <div class="kf_grid">
+        <div class="kf_col_media">
+          <div class="kf_img_container kf_transparent_wrap">
+            <img src="assets/details/handle_chrome.png" alt="Фурнитура из нержавеющей стали" class="kf_img_handle_enlarged" loading="lazy">
+          </div>
+        </div>
+        <div class="kf_col_info">
+          <h3 class="kf_title disp_txt_sm dark_gray">НАЖИМНЫЕ ГАРНИТУРЫ ИЗ НЕРЖАВЕЮЩЕЙ СТАЛИ AISI 304</h3>
+          <div class="body_txt dark_gray kf_text">
+            Специализированная фурнитура с терморазрывом, исключающим нагревание наружной ручки при пожаре с обратной стороны полотна. Литые металлические накладки и квадрат 9×9 мм из высокопрочной стали.
+            <br><br>
+            Коррозионная стойкость и химическая инертность нержавеющей стали AISI 304 позволяют эксплуатировать конструкции во влажных, агрессивных и медицинских средах с сохранением эстетичного вида.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEATURE 05: ПАЛИТРА RAL -->
+    <div class="key_feature">
+      <div class="kf_grid">
+        <div class="kf_col_media">
+          <div class="kf_img_container">
+            <div class="ral_palette_showcase">
+              <div class="ral_swatch" style="background-color: #E8D3B9;"><span class="ral_code">1015</span></div>
+              <div class="ral_swatch" style="background-color: #59191F;"><span class="ral_code">3005</span></div>
+              <div class="ral_swatch" style="background-color: #114B7D;"><span class="ral_code">5005</span></div>
+              <div class="ral_swatch" style="background-color: #0E4438;"><span class="ral_code">6005</span></div>
+              <div class="ral_swatch" style="background-color: #8D948D;"><span class="ral_code">7004</span></div>
+              <div class="ral_swatch" style="background-color: #383E42;"><span class="ral_code">7016</span></div>
+              <div class="ral_swatch" style="background-color: #474B4E;"><span class="ral_code">7024</span></div>
+              <div class="ral_swatch" style="background-color: #D7D7D7;"><span class="ral_code">7035</span></div>
+              <div class="ral_swatch" style="background-color: #9DA3A6;"><span class="ral_code">7040</span></div>
+              <div class="ral_swatch" style="background-color: #442F29;"><span class="ral_code">8017</span></div>
+              <div class="ral_swatch" style="background-color: #3D3635;"><span class="ral_code">8019</span></div>
+              <div class="ral_swatch" style="background-color: #F4F8F7;"><span class="ral_code" style="color:#000;">9003</span></div>
+              <div class="ral_swatch" style="background-color: #0A0A0A;"><span class="ral_code">9005</span></div>
+              <div class="ral_swatch" style="background-color: #A5A8A6;"><span class="ral_code">9006</span></div>
+              <div class="ral_swatch" style="background-color: #F7FBF5;"><span class="ral_code" style="color:#000;">9016</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="kf_col_info">
+          <h3 class="kf_title disp_txt_sm dark_gray">ПОРОШКОВО-ПОЛИМЕРНОЕ ПОКРЫТИЕ ПО ШКАЛЕ RAL</h3>
+          <div class="body_txt dark_gray kf_text">
+            Полиэфирное термоотверждаемое порошковое напыление толщиной 80–120 мкм обеспечивает абсолютную защиту металлоконструкции от влаги, коррозии и механических повреждений.
+            <br><br>
+            Любой цвет по официальному каталогу RAL (популярные оттенки RAL 7035, 7040, 9005, 8017 в наличии на складе). Доступны текстуры «шагрень» с повышенной устойчивостью к царапинам или гладкий шелковистый глянец.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- АНАТОМИЯ КОНСТРУКЦИИ (ПО-РУССКИ, FULL-WIDTH, DESKTOP & MOBILE RESPONSIVE) -->
+  <section id="exploded" class="exploded_section">
+    <div class="exploded_header">
+      <div class="detail_txt gray">ИНЖЕНЕРНАЯ СХЕМА</div>
+      <h2 class="disp_txt black">АНАТОМИЯ КОНСТРУКЦИИ</h2>
+      <p class="body_txt dark_gray">Конструктивное устройство сертифицированного противопожарного блока ДМП-01</p>
+    </div>
+
+    <div class="exploded_canvas_wrap_fullbleed">
+      <picture>
+        <source media="(max-width: 768px)" srcset="assets/details/slide_anatomy_mobile.png">
+        <img src="assets/details/slide_anatomy.png" alt="Конструктивный разрез противопожарной двери" class="exploded_main_img" loading="lazy">
+      </picture>
+    </div>
+
+    <!-- MOBILE TECHNICAL SPECIFICATION BREAKDOWN (LEGIBLE DIRECTLY ON PHONE) -->
+    <div class="anatomy_mobile_specs">
+      <div class="ams_grid detail_txt">
+        <div class="ams_item"><span class="orange">01</span> <strong>СТВОРКА ДВЕРИ:</strong> Стальной лист с базальтовым заполнением EI-60</div>
+        <div class="ams_item"><span class="orange">02</span> <strong>ОСТЕКЛЕНИЕ:</strong> Противопожарный триплекс с гелем EIW-60 (до 25%)</div>
+        <div class="ams_item"><span class="orange">03</span> <strong>ФУРНИТУРА:</strong> Замок с термоблокировкой ригеля, нажимной гарнитур</div>
+        <div class="ams_item"><span class="orange">04</span> <strong>ДВЕРНАЯ КОРОБКА:</strong> Усиленный профиль с двойным притвором</div>
+        <div class="ams_item"><span class="orange">05</span> <strong>УТЕПЛИТЕЛЬ:</strong> Базальтовая плита плотностью 130 кг/м³ (до 1000°C)</div>
+        <div class="ams_item"><span class="orange">06</span> <strong>РЕБРА ЖЕСТКОСТИ:</strong> П-образные вертикальные и диагональные лонжероны</div>
+        <div class="ams_item"><span class="orange">07</span> <strong>КОНТУР УПЛОТНЕНИЯ:</strong> Резиновый D-профиль + термолента 150°C</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIFICATION TABLE (SUPERLATIVE #specs) -->
+  <section id="specs" class="specs_section">
+    <div class="section_inner">
+      <div class="headline disp_txt light_gray">SPECIFICATION</div>
+
+      <div class="all_specs detail_txt">
+        <!-- SPEC COL 1 -->
+        <div class="spec_block">
+          <div class="spec_row">
+            <div class="gray">МОДЕЛЬНЫЙ РЯД</div>
+            <div class="white">ДМП-01, ДМП-02, ЛМП-01, ЛМП-02, EIW-60, ВМ-02</div>
+          </div>
+
+          <div class="spec_row">
+            <div class="gray">ПРЕДЕЛ ОГНЕСТОЙКОСТИ</div>
+            <div class="white">
+              EI-60 (60 МИНУТ)<br>
+              EIS-60 (С ДЫМОГАЗОНЕПРОНИЦАЕМОСТЬЮ)<br>
+              EIW-60 (С ОСТЕКЛЕНИЕМ ДО 25%)<br>
+              EI-90 (ПО ИНДИВИДУАЛЬНОМУ ПРОЕКТУ)
+            </div>
+          </div>
+
+          <div class="spec_row">
+            <div class="gray">КОРПУС И СТАЛЬ</div>
+            <div class="white">
+              ХОЛОДНОКАТАНАЯ СТАЛЬ 1.5–2.0 ММ<br>
+              ЦЕЛЬНОГНУТОЕ ПОЛОТНО ТОЛЩИНОЙ 60–80 ММ<br>
+              П-ОБРАЗНЫЕ ВНУТРЕННИЕ РЕБРА ЖЕСТКОСТИ<br>
+              ПРОТИВОСЪЕМНЫЕ СТАЛЬНЫЕ РИГЕЛИ (2 ШТ.)
+            </div>
+          </div>
+
+          <div class="spec_row">
+            <div class="gray">ТЕРМОИЗОЛЯЦИЯ</div>
+            <div class="white">
+              БАЗАЛЬТОВАЯ МИНЕРАЛОВАТНАЯ ПЛИТА 130 КГ/М³<br>
+              КЛАСС НЕГОРЮЧЕСТИ: НГ (ГОСТ 30244)<br>
+              ДВУХКОНТУРНЫЙ РЕЗИНОВЫЙ D-УПЛОТНИТЕЛЬ<br>
+              ТЕРМОРАСШИРЯЮЩАЯСЯ ЛЕНТА ПРИ 150°C
+            </div>
+          </div>
+        </div>
+
+        <!-- SPEC COL 2 -->
+        <div class="spec_block">
+          <div class="spec_row">
+            <div class="gray">ГАБАРИТНЫЕ РАЗМЕРЫ</div>
+            <div class="white">
+              ОДНОПОЛЬНЫЕ: ОТ 800×2000 ДО 1100×2400 ММ<br>
+              ДВУПОЛЬНЫЕ: ОТ 1200×2000 ДО 1900×2500 ММ<br>
+              ВОРОТА: ДО 4000×4000 ММ<br>
+              ИНДИВИДУАЛЬНЫЕ РАЗМЕРЫ С ШАГОМ 10 ММ
+            </div>
+          </div>
+
+          <div class="spec_row">
+            <div class="gray">ФУРНИТУРА И ЗАМКИ</div>
+            <div class="white">
+              ПРОТИВОПОЖАРНЫЙ ЗАМОК С ТЕРМОБЛОКИРОВКОЙ<br>
+              ЕВРОЦИЛИНДР КЛАССА ВЫСОКОЙ СЕКРЕТНОСТИ<br>
+              ШТАНГА «АНТИПАНИКА» PUSH-BAR (ГОСТ 31471)<br>
+              ЭЛЕКТРОМАГНИТНЫЕ И ГИДРАВЛИЧЕСКИЕ ДОВОДЧИКИ
+            </div>
+          </div>
+
+          <div class="spec_row">
+            <div class="gray">ОСТЕКЛЕНИЕ EIW</div>
+            <div class="white">
+              ПРОТИВОПОЖАРНЫЙ МНОГОСЛОЙНЫЙ СТЕКЛОПАКЕТ<br>
+              ИНТУМЕСЦЕНТНЫЙ ГЕЛЕВЫЙ СЛОЙ (EIW-60)<br>
+              ПЛОЩАДЬ ОСТЕКЛЕНИЯ ДО 25% ПО ГОСТ<br>
+              ПРОЗРАЧНОЕ, МАТОВОЕ И ТОНИРОВАННОЕ
+            </div>
+          </div>
+
+          <div class="spec_row">
+            <div class="gray">СЕРТИФИКАЦИЯ</div>
+            <div class="white">
+              ГОСТ Р 57327-2016<br>
+              ТР ЕАЭС 043/2017 (СЕРТИФИКАТ СООТВЕТСТВИЯ)<br>
+              ЛИЦЕНЗИЯ МЧС РОССИИ № 43-06-2021-001842<br>
+              ИНДИВИДУАЛЬНЫЙ МЕТАЛЛИЧЕСКИЙ ШИЛЬД
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REDESIGNED HIGH-IMPACT DELIVERY & LOGISTICS SECTION -->
+  <section id="delivery" class="delivery_section">
+    <div class="section_inner">
+      <div class="delivery_header_row">
+        <h2 class="disp_txt white">ПРОИЗВОДСТВО &amp; ЛОГИСТИКА</h2>
+        <div class="detail_txt gray">ПОЛНЫЙ ЦИКЛ ПОСТАВКИ И СДАЧИ МЧС</div>
+      </div>
+
+      <div class="delivery_brutalist_grid">
+        <!-- CARD 01 -->
+        <div class="del_brut_card">
+          <div class="card_top_num disp_txt orange">01</div>
+          <div class="card_body">
+            <div class="card_tag detail_txt gray">ПРОИЗВОДСТВЕННЫЙ ЦИКЛ</div>
+            <h3 class="disp_txt_del">ОТ 3 ДНЕЙ</h3>
+            <p class="body_txt gray del_desc">
+              Собственный складской запас готовых стандартных позиций ДМП-01 (800×2000, 900×2100 мм) в Кирове. Изготовление индивидуальных партий под проект — от 3 до 14 рабочих дней.
+            </p>
+          </div>
+          <div class="card_footer detail_txt white">
+            ОТГРУЗКА 24/7 СО СКЛАДА
+          </div>
+        </div>
+
+        <!-- CARD 02 -->
+        <div class="del_brut_card">
+          <div class="card_top_num disp_txt orange">02</div>
+          <div class="card_body">
+            <div class="card_tag detail_txt gray">ГЕОГРАФИЯ ДОСТАВКИ</div>
+            <h3 class="disp_txt_del">ПО ВСЕЙ РОССИИ</h3>
+            <p class="body_txt gray del_desc">
+              По Кирову и Кировской области — собственным транспортом. В любой регион РФ — проверенными транспортными компаниями (Деловые Линии, ПЭК) либо попутным автотранспортом с жесткой защитной обрешеткой.
+            </p>
+          </div>
+          <div class="card_footer detail_txt white">
+            ЗАВОДСКАЯ ОБРЕШЕТКА И СТРАХОВАНИЕ
+          </div>
+        </div>
+
+        <!-- CARD 03 -->
+        <div class="del_brut_card">
+          <div class="card_top_num disp_txt orange">03</div>
+          <div class="card_body">
+            <div class="card_tag detail_txt gray">МОНТАЖ ПО ГОСТ</div>
+            <h3 class="disp_txt_del">ЛИЦЕНЗИЯ МЧС</h3>
+            <p class="body_txt gray del_desc">
+              Штатные монтажные бригады для объектов Кирова и области. Официальная лицензия МЧС России № 43-06-2021-001842. Предоставление актов скрытых работ и сдача объекта пожарному инспектору.
+            </p>
+          </div>
+          <div class="card_footer detail_txt white">
+            СДАЧА ОБЪЕКТА С 1-ГО РАЗА
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY OF REAL INSTALLED DOORS -->
+  <section id="gallery" class="gallery_section">
+    <div class="section_inner">
+      <div class="section_title_row">
+        <div>
+          <span class="detail_txt gray">ОБЪЕКТЫ И ПРОЕКТЫ</span>
+          <h2 class="disp_txt black" style="margin-top: 0.5rem;">РЕАЛИЗОВАННЫЕ КОНСТРУКЦИИ</h2>
+        </div>
+        <div class="detail_txt gray">ФОТОГАЛЕРЕЯ МОНТАЖА</div>
+      </div>
+
+      <div class="gallery_grid">
+        <div class="gal_item item_wide">
+          <img src="assets/gallery/gal_01.jpg" alt="Противопожарные двупольные входные группы" loading="lazy">
+          <div class="gal_caption detail_txt">ДВУПОЛЬНЫЕ АЛЮМИНИЕВЫЕ КОНСТРУКЦИИ EIW-60 · ВХОДНАЯ ГРУППА</div>
+        </div>
+        <div class="gal_item">
+          <img src="assets/gallery/gal_02.jpg" alt="Остекленные холловые противопожарные двери" loading="lazy">
+          <div class="gal_caption detail_txt">ОСТЕКЛЕННЫЙ БЛОК В ХОЛЛЕ БИЗНЕС-ЦЕНТРА</div>
+        </div>
+        <div class="gal_item">
+          <img src="assets/gallery/gal_03.jpg" alt="Двупольная эвакуационная дверь" loading="lazy">
+          <div class="gal_caption detail_txt">ЭВАКУАЦИОННЫЙ ПРОХОД С СИСТЕМОЙ АНТИПАНИКА</div>
+        </div>
+        <div class="gal_item">
+          <img src="assets/gallery/gal_04.jpg" alt="Алюминиевые окна EIW-60" loading="lazy">
+          <div class="gal_caption detail_txt">ПРОТИВОПОЖАРНЫЕ ОКНА EIW-60 · ВНУТРЕННИЙ КОНТУР</div>
+        </div>
+        <div class="gal_item">
+          <img src="assets/gallery/gal_05.jpg" alt="Техническая металлическая дверь" loading="lazy">
+          <div class="gal_caption detail_txt">СТАЛЬНАЯ ТЕХНИЧЕСКАЯ ДВЕРЬ С КОДОВЫМ ЗАМКОМ</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRUTALIST CONTACT & SPECIFICATION REQUEST (APPROVED FOOTER) -->
+  <section id="order" class="order_section">
+    <div class="section_inner">
+      <h2 class="disp_txt white order_headline">
+        РЕММАШСЕРВИС<br>
+        <span class="gray">РАСЧЁТ СПЕЦИФИКАЦИИ</span>
+      </h2>
+
+      <p class="body_txt gray order_sub">
+        Заполните параметры проекта или прикрепите готовую спецификацию. Инженерный отдел завода подготовит технико-коммерческое предложение с фиксированной стоимостью в течение 15 минут.
+      </p>
+
+      <form id="lead_form" class="order_form" onsubmit="handleLeadSubmit(event)">
+        <div class="form_grid">
+          <div class="input_wrap">
+            <label class="detail_txt gray">ВАШ ТЕЛЕФОН *</label>
+            <input type="tel" id="form_phone" placeholder="+7 (___) ___-__-__" required class="input_brutalist">
+          </div>
+
+          <div class="input_wrap">
+            <label class="detail_txt gray">ТИП КОНСТРУКЦИИ</label>
+            <select id="form_product" class="input_brutalist select_brutalist">
+              <option value="ДМП-01 EIS-60 (Однопольная)">ДМП-01 EIS-60 (Однопольная глухая)</option>
+              <option value="ДМП-02 EIS-60 (Двупольная)">ДМП-02 EIS-60 (Двупольная)</option>
+              <option value="ДМПД-01 EIW-60 (Остекленная)">ДМПД-01 EIW-60 (Остекленная)</option>
+              <option value="ЛМП-01 EI-60 (Люк)">ЛМП-01 EI-60 (Люк противопожарный)</option>
+              <option value="Окна EIW-60 (Алюминиевые)">Окна EIW-60 (Алюминиевые)</option>
+              <option value="Ворота ВМ-02">Ворота ВМ-02 (Противопожарные)</option>
+              <option value="Комплексная спецификация объекта">Комплексная спецификация объекта</option>
+            </select>
+          </div>
+
+          <div class="input_wrap">
+            <label class="detail_txt gray">КОЛИЧЕСТВО / РАЗМЕРЫ</label>
+            <input type="text" id="form_qty" placeholder="Например: 12 шт., 900×2100 мм" class="input_brutalist">
+          </div>
+
+          <div class="input_wrap submit_wrap">
+            <button type="submit" class="btn_submit_order detail_txt">
+              <span>ПОЛУЧИТЬ РАСЧЁТ ↗</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="form_agreement detail_txt gray">
+          Нажимая «ПОЛУЧИТЬ РАСЧЁТ», вы даете согласие на обработку персональных данных в соответствии с ФЗ-152 РФ.
+        </div>
+      </form>
+
+      <!-- BOTTOM BAR FOOTER -->
+      <footer class="footer_bottombar detail_txt gray">
+        <div class="fb_col">
+          <div class="white">ООО «РЕММАШСЕРВИС»</div>
+          <div>ИНН: 4345479630 &nbsp;|&nbsp; ОГРН: 1184350005721</div>
+          <div>Г. КИРОВ, УЛ. ПРОИЗВОДСТВЕННАЯ, 28</div>
+        </div>
+
+        <div class="fb_col">
+          <div class="white">ОТДЕЛ СБЫТА:</div>
+          <div><a href="tel:+78332205611" class="white link">+7 (8332) 20-56-11</a></div>
+          <div><a href="mailto:info@remmashservice.ru" class="white link">info@remmashservice.ru</a></div>
+        </div>
+
+        <div class="fb_col">
+          <div class="white">РЕЖИМ РАБОТЫ:</div>
+          <div>ПН–ПТ: 08:00 – 18:00 (МСК)</div>
+          <div>ОТГРУЗКИ: ПН–СБ 24/7</div>
+        </div>
+
+        <div class="fb_col text_right">
+          <a href="#hero" class="white link">В НАЧАЛО СТРАНИЦЫ ↑</a>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <!-- PRODUCT POPUP MODAL -->
+  <div id="product_modal" class="modal_backdrop hidden" onclick="closeProductModal(event)">
+    <div class="modal_panel">
+      <button class="modal_close_btn" onclick="closeProductModalDirect()">✕</button>
+      <div id="modal_content" class="modal_body"></div>
+    </div>
+  </div>
+
+  <!-- ORDER MODAL -->
+  <div id="order_modal" class="modal_backdrop hidden" onclick="closeOrderModal(event)">
+    <div class="modal_panel modal_panel_order">
+      <button class="modal_close_btn" onclick="closeOrderModalDirect()">✕</button>
+      <div class="modal_order_body">
+        <div class="detail_txt orange">ЗАЯВКА НА РАСЧЁТ</div>
+        <h3 class="disp_txt_sm white" id="modal_order_title">РАСЧЁТ ПРОЕКТА</h3>
+        <p class="body_txt gray" id="modal_order_desc">Оставьте контактные данные. Инженер свяжется с вами для уточнения открывания, размеров и комплектации.</p>
+        
+        <form onsubmit="handleModalLeadSubmit(event)" class="modal_form">
+          <div class="input_wrap">
+            <label class="detail_txt gray">ТЕЛЕФОН *</label>
+            <input type="tel" id="modal_phone" placeholder="+7 (___) ___-__-__" required class="input_brutalist">
+          </div>
+          <div class="input_wrap">
+            <label class="detail_txt gray">КОМПАНИЯ / ИМЯ</label>
+            <input type="text" id="modal_name" placeholder="ООО или представитель" class="input_brutalist">
+          </div>
+          <div class="input_wrap">
+            <label class="detail_txt gray">ПРИМЕЧАНИЕ / РАЗМЕРЫ</label>
+            <input type="text" id="modal_comment" placeholder="Размеры, количество, требования МЧС" class="input_brutalist">
+          </div>
+          <button type="submit" class="btn_brutalist full_width">
+            <span>ОТПРАВИТЬ СПЕЦИФИКАЦИЮ ↗</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

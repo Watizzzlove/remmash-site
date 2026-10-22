@@ -1,0 +1,7 @@
+remmash_handoff.zip
+*.zip
+__pycache__/
+.tempmediaStorage/
+client_assets/
+ref_superlative/
+references/
